@@ -3,15 +3,103 @@
 <head>
 </head>
 <body>
-<!-- <script src="https://d3js.org/d3.v5.min.js"></script>-->
+ <script src="https://d3js.org/d3.v4.min.js"></script>
 <!-- <script type="text/javascript" src="circlepacking.js"></script>-->
 
-<div width= 900 height=900 id="observablehq-chart-f8bd151f"></div>
-<svg id="chart" viewBox="0 0 960 500"
-     preserveAspectRatio="xMidYMid meet">
-</svg>
-<script type="module" src='chart.js'></script>
+<!--<div width= 900 height=900 id="observablehq-chart-f8bd151f"></div>-->
+<!--<svg id="chart" viewBox="0 0 960 500"-->
+<!--     preserveAspectRatio="xMidYMid meet">-->
+<!--</svg>-->
+<!--<script type="module" src='chart.js'></script>-->
+
+<!--<script type="module" src='treemap.js'></script>-->
+
+ <div id="svg">
+     <svg style="width:600px;height:600px;" ></svg>
+ </div>
+ <script>
 
 
+
+
+     var data = d3.csv('cluster_topic_index.csv',function(data){
+         var stratify = d3.stratify()
+             .parentId(function (d) {
+                 return d.id.substring(0, d.id.lastIndexOf("."));
+             })
+             .id(function (d) {
+                 return d.id;
+             });
+
+         var root = stratify(data).sum(function(d) { return d.count; })
+             .sort(function(a, b) { return b.height - a.height || b.value - a.value; });
+         console.log(root);
+         var depthScale = d3.scaleOrdinal()
+             .range(["#5EAFC6", "#FE9922", "#93c464", "#75739F"]);
+
+         // var treemapLayout
+         var root = d3.treemap()
+             .size([500,500])
+             .padding(d => d.depth * 5 + 5)
+             (stratify(data).sum(function(d) { return d.count; }));
+
+         // treemapLayout(root);
+
+         // //
+         // d3.select("svg")
+         //     .selectAll("rect")
+         //     .data(root.descendants(),
+         //         d => d.data.topic)
+         //     .enter()
+         //     .append("rect")
+         //     .attr("x", d => d.x0)
+         //     .attr("y", d => d.y0)
+         //     .attr("width", d => d.x1 - d.x0)
+         //     .attr("height", d => d.y1 - d.y0)
+         //     .style("fill", d => depthScale(d.depth))
+         //     .style("stroke", "black")
+         //     // .on("click", filterTreemap);
+
+         // function filterTreemap(d) {
+         //     var newRoot = d3.hierarchy(d.data, p => p.values)
+         //         .sum(p => p.retweets ? p.retweets.length + p.favorites.length + 1 : undefined);
+         //
+         //     treemapLayout(newRoot);
+         //
+         //     d3.select("svg")
+         //         .selectAll("rect")
+         //         .data(newRoot.descendants(), p => p.data.content || p.data.user || p.data.key)
+         //         .enter()
+         //         .append("rect")
+         //         .style("fill", p => depthScale(p.depth))
+         //         .style("stroke", "black");
+         //
+         //     d3.select("svg")
+         //         .selectAll("rect")
+         //         .data(newRoot.descendants(), p => p.data.content || p.data.user || p.data.key)
+         //         .exit()
+         //         .remove();
+         //
+         //     d3.select("svg")
+         //         .selectAll("rect")
+         //         .on("click", d === root ?
+         //             (p) => filterTreemap(p) : () => filterTreemap(root))
+         //         .transition()
+         //         .duration(1000)
+         //         .attr("x", p => p.x0)
+         //         .attr("y", p => p.y0)
+         //         .attr("width", p => p.x1 - p.x0)
+         //         .attr("height", p => p.y1 - p.y0);
+         // }
+
+
+     })
+
+
+
+     function viz(data) {
+
+     }
+ </script>
 </body>
 </html>

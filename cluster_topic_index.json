@@ -1,0 +1,118 @@
+[
+    {
+        "id": "0",
+        "topic": "['data', 'country', 'indicator', 'national', 'level', 'http']"
+    },
+    {
+        "id": "0.0",
+        "topic": "['biodiversity', 'area', 'protected', 'data', 'country', 'specie']"
+    },
+    {
+        "id": "0.0.0",
+        "topic": "['biodiversity', 'area', 'protected', 'data', 'country', 'fishing']"
+    },
+    {
+        "id": "0.0.1",
+        "topic": "['area', 'biodiversity', 'specie', 'protected', 'data', 'forest']"
+    },
+    {
+        "id": "0.1",
+        "topic": "['data', 'country', 'indicator', 'national', 'level', 'survey']"
+    },
+    {
+        "id": "0.1.0",
+        "topic": "['data', 'country', 'indicator', 'national', 'survey', 'year']"
+    },
+    {
+        "id": "0.1.0.0",
+        "topic": "['city', 'waste', 'data', 'indicator', 'transport', 'urban']"
+    },
+    {
+        "id": "0.1.0.1",
+        "topic": "['disaster', 'sendai', 'oeiwg', 'unisdr', 'data', 'indicator']"
+    },
+    {
+        "id": "0.1.1",
+        "topic": "['data', 'country', 'indicator', 'national', 'survey', 'level']"
+    },
+    {
+        "id": "0.1.1.0",
+        "topic": "['convention', 'data', 'scp', 'national', 'dmc', 'material']"
+    },
+    {
+        "id": "0.1.1.1",
+        "topic": "['data', 'country', 'indicator', 'national', 'survey', 'level']"
+    },
+    {
+        "id": "0.1.1.1.0",
+        "topic": "['water', 'country', 'data', 'transboundary', 'indicator', 'sanitation']"
+    },
+    {
+        "id": "0.1.1.1.1",
+        "topic": "['data', 'country', 'indicator', 'national', 'survey', 'level']"
+    },
+    {
+        "id": "0.1.1.1.1.0",
+        "topic": "['woman', 'violence', 'data', 'indicator', 'country', 'sexual']"
+    },
+    {
+        "id": "0.1.1.1.1.1",
+        "topic": "['data', 'country', 'indicator', 'national', 'survey', 'level']"
+    },
+    {
+        "id": "0.1.1.1.1.1.0",
+        "topic": "['data', 'education', 'learning', 'country', 'teacher', 'indicator']"
+    },
+    {
+        "id": "0.1.1.1.1.1.1",
+        "topic": "['data', 'country', 'indicator', 'survey', 'poverty', 'household']"
+    },
+    {
+        "id": "0.1.1.1.1.1.1.0",
+        "topic": "['data', 'country', 'indicator', 'national', 'year', 'development']"
+    },
+    {
+        "id": "0.1.1.1.1.1.1.0.0",
+        "topic": "['data', 'country', 'industrial', 'enterprise', 'manufacturing', 'unido']"
+    },
+    {
+        "id": "0.1.1.1.1.1.1.0.1",
+        "topic": "['data', 'country', 'indicator', 'tariff', 'national', 'year']"
+    },
+    {
+        "id": "0.1.1.1.1.1.1.0.1.0",
+        "topic": "['data', 'labour', 'country', 'ilo', 'occupational', 'child']"
+    },
+    {
+        "id": "0.1.1.1.1.1.1.0.1.1",
+        "topic": "['disaster', 'sendai', 'data', 'city', 'indicator', 'oeiwg']"
+    },
+    {
+        "id": "0.1.1.1.1.1.1.0.1.1.0",
+        "topic": "['country', 'data', 'tariff', 'remittance', 'bank', 'prosperity']"
+    },
+    {
+        "id": "0.1.1.1.1.1.1.0.1.1.1",
+        "topic": "['data', 'country', 'indicator', 'development', 'revenue', 'national']"
+    },
+    {
+        "id": "0.1.1.1.1.1.1.1",
+        "topic": "['data', 'country', 'indicator', 'poverty', 'survey', 'household']"
+    },
+    {
+        "id": "0.1.1.1.1.1.1.1.0",
+        "topic": "['data', 'food', 'genetic', 'country', 'animal', 'level']"
+    },
+    {
+        "id": "0.1.1.1.1.1.1.1.1",
+        "topic": "['data', 'country', 'tariff', 'indicator', 'development', 'remittance']"
+    },
+    {
+        "id": "0.1.1.1.1.1.1.1.1.0",
+        "topic": "['poverty', 'data', 'country', 'land', 'indicator', 'survey']"
+    },
+    {
+        "id": "0.1.1.1.1.1.1.1.1.1",
+        "topic": "['data', 'country', 'health', 'mortality', 'indicator', 'estimate']"
+    }
+]

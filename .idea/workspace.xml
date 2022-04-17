@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8c20a58-5fe5-4fca-a906-4c8320183942" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/circlepacking.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/treemap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/tweets.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cluster_topic_index.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cluster_topic_index.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/archive/chart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circlepacking.js" beforeDir="false" afterPath="$PROJECT_DIR$/archive/circlepacking.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +29,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="27K7aNfybv1WH2jMlVXuVUm6tLc" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
@@ -54,7 +61,7 @@
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="circlepacking.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/circlepacking.js" working-dir="$PROJECT_DIR$">
+    <configuration name="circlepacking.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/archive/circlepacking.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -76,7 +83,7 @@
       <updated>1649056985500</updated>
       <workItem from="1649056988354" duration="2563000" />
       <workItem from="1649184414515" duration="893000" />
-      <workItem from="1650092273597" duration="8528000" />
+      <workItem from="1650092273597" duration="24912000" />
     </task>
     <servers />
   </component>
@@ -95,5 +102,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

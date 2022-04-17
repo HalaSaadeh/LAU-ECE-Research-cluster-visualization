@@ -4,25 +4,13 @@
 </head>
 <body>
  <script src="https://d3js.org/d3.v4.min.js"></script>
-<!-- <script type="text/javascript" src="circlepacking.js"></script>-->
 
-<!--<div width= 900 height=900 id="observablehq-chart-f8bd151f"></div>-->
-<!--<svg id="chart" viewBox="0 0 960 500"-->
-<!--     preserveAspectRatio="xMidYMid meet">-->
-<!--</svg>-->
-<!--<script type="module" src='chart.js'></script>-->
-
-<!--<script type="module" src='treemap.js'></script>-->
-
- <div id="svg">
-     <svg style="width:600px;height:600px;" ></svg>
+ <div id="viz">
+     <svg style="width:900px;height:800px;" ></svg>
  </div>
  <script>
 
-
-
-
-     var data = d3.csv('cluster_topic_index.csv',function(data){
+     var data = d3.json('cluster_topic_index.json',function(data){
          var stratify = d3.stratify()
              .parentId(function (d) {
                  return d.id.substring(0, d.id.lastIndexOf("."));
@@ -31,34 +19,32 @@
                  return d.id;
              });
 
-         var root = stratify(data).sum(function(d) { return d.count; })
+         var root = stratify(data).sum(function(d) { return 1; })
              .sort(function(a, b) { return b.height - a.height || b.value - a.value; });
          console.log(root);
          var depthScale = d3.scaleOrdinal()
              .range(["#5EAFC6", "#FE9922", "#93c464", "#75739F"]);
 
-         // var treemapLayout
-         var root = d3.treemap()
-             .size([500,500])
-             .padding(d => d.depth * 5 + 5)
-             (stratify(data).sum(function(d) { return d.count; }));
+         var treemapLayout = d3.treemap()
+             .size([900,700])
+             .padding(d => d.depth * 5 + 5);
 
-         // treemapLayout(root);
+         treemapLayout(root);
 
-         // //
-         // d3.select("svg")
-         //     .selectAll("rect")
-         //     .data(root.descendants(),
-         //         d => d.data.topic)
-         //     .enter()
-         //     .append("rect")
-         //     .attr("x", d => d.x0)
-         //     .attr("y", d => d.y0)
-         //     .attr("width", d => d.x1 - d.x0)
-         //     .attr("height", d => d.y1 - d.y0)
-         //     .style("fill", d => depthScale(d.depth))
-         //     .style("stroke", "black")
-         //     // .on("click", filterTreemap);
+
+         d3.select("svg")
+             .selectAll("rect")
+             .data(root.descendants(),
+                 d => d.data.topic)
+             .enter()
+             .append("rect")
+             .attr("x", d => d.x0)
+             .attr("y", d => d.y0)
+             .attr("width", d => d.x1 - d.x0)
+             .attr("height", d => d.y1 - d.y0)
+             .style("fill", d => depthScale(d.depth))
+             .style("stroke", "black")
+             // .on("click", filterTreemap);
 
          // function filterTreemap(d) {
          //     var newRoot = d3.hierarchy(d.data, p => p.values)

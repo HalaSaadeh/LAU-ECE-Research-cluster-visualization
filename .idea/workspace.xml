@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8c20a58-5fe5-4fca-a906-4c8320183942" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/circlepackingpage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/treemappage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/treemappage.html" beforeDir="false" afterPath="$PROJECT_DIR$/treemappage.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +84,7 @@
       <updated>1649056985500</updated>
       <workItem from="1649056988354" duration="2563000" />
       <workItem from="1649184414515" duration="893000" />
-      <workItem from="1650092273597" duration="31143000" />
+      <workItem from="1650092273597" duration="34037000" />
     </task>
     <servers />
   </component>

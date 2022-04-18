@@ -3,102 +3,103 @@
 <head>
 </head>
 <body>
- <script src="https://d3js.org/d3.v4.min.js"></script>
-
- <div id="viz">
-     <svg style="width:900px;height:800px;" ></svg>
- </div>
- <script>
-
-     var data = d3.json('cluster_topic_index.json',function(data){
-         var stratify = d3.stratify()
-             .parentId(function (d) {
-                 return d.id.substring(0, d.id.lastIndexOf("."));
-             })
-             .id(function (d) {
-                 return d.id;
-             });
-
-         var root = stratify(data).sum(function(d) { return 1; })
-             .sort(function(a, b) { return b.height - a.height || b.value - a.value; });
-         console.log(root);
-         var depthScale = d3.scaleOrdinal()
-             .range(["#5EAFC6", "#FE9922", "#93c464", "#75739F"]);
-
-         var treemapLayout = d3.treemap()
-             .size([900,700])
-             .padding(d => d.depth + 10);
-
-         treemapLayout(root);
-
-         // Create the rects
-         d3.select("svg")
-             .selectAll("rect")
-             .data(root.descendants(),
-                 d => d.data.topic)
-             .enter()
-             .append("rect")
-             .attr("x", d => d.x0)
-             .attr("y", d => d.y0)
-             .attr("width", d => d.x1 - d.x0)
-             .attr("height", d => d.y1 - d.y0)
-             .style("fill", d => depthScale(d.depth))
-             .style("stroke", "black")
-             .on("click", filterTreemap);
-
-         // Create the id labels
-         d3.select("svg")
-             .selectAll("text")
-             .data(root.leaves())
-             .enter()
-             .append("text")
-             .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
-             .attr("y", function(d){ return d.y0+20})    // +20 to adjust position (lower)
-             .text(function(d){ return d.data.id })
-             .attr("font-size", d => {
-                 if (d === root) return "1em";
-                 const width = x(d.x1) - x(d.x0), height = y(d.y1) - y(d.y0);
-                 return Math.max(Math.min(width/5, height/2, Math.sqrt((width*width + height*height))/10), 9)
-             })
-             .attr("fill", "white");
-
-         function filterTreemap(d) {
-             console.log(d)
-             var newRoot = d3.hierarchy(d.data, p => p.values)
-                 .sum(function(d) { return 1; });
-
-             treemapLayout(newRoot);
-             console.log(newRoot)
-
-             d3.select("svg")
-                 .selectAll("rect")
-                 .data(newRoot.descendants(), p => p.topic)
-                 .enter()
-                 .append("rect")
-                 .style("fill", p => depthScale(p.depth))
-                 .style("stroke", "black");
-
-             d3.select("svg")
-                 .selectAll("rect")
-                 .data(newRoot.descendants(), p => p.data.topic)
-                 .exit()
-                 .remove();
-
-             d3.select("svg")
-                 .selectAll("rect")
-                 .on("click", d === root ?
-                     (p) => filterTreemap(p) : () => filterTreemap(root))
-                 .transition()
-                 .duration(1000)
-                 .attr("x", p => p.x0)
-                 .attr("y", p => p.y0)
-                 .attr("width", p => p.x1 - p.x0)
-                 .attr("height", p => p.y1 - p.y0);
-         }
+<style type="text/css">
+    .toolTip {
+        position: absolute;
+        display: none;
+        width: auto;
+        height: auto;
+        background: none repeat scroll 0 0 white;
+        border: 0 none;
+        border-radius: 8px 8px 8px 8px;
+        box-shadow: -3px 3px 15px #888888;
+        color: black;
+        font: 12px sans-serif;
+        padding: 5px;
+        text-align: center;
+    }
+</style>
 
 
-     })
+<script src="https://d3js.org/d3.v4.min.js"></script>
 
- </script>
+<div id="viz">
+    <svg style="width:900px;height:800px;"></svg>
+</div>
+<script>
+
+    var data = d3.json('cluster_topic_index.json', function (data) {
+        var stratify = d3.stratify()
+            .parentId(function (d) {
+                return d.id.substring(0, d.id.lastIndexOf("."));
+            })
+            .id(function (d) {
+                return d.id;
+            });
+
+        var root = stratify(data).sum(function (d) {
+            return 1;
+        })
+            .sort(function (a, b) {
+                return b.height - a.height || b.value - a.value;
+            });
+        console.log(root);
+        var depthScale = d3.scaleOrdinal()
+            .range(["#5EAFC6", "#FE9922", "#93c464", "#75739F"]);
+
+        var treemapLayout = d3.treemap()
+            .size([900, 700])
+            .padding(d => d.depth + 10);
+
+        treemapLayout(root);
+
+        // Create the rects
+        d3.select("svg")
+            .selectAll("rect")
+            .data(root.descendants(),
+                d => d.data.topic)
+            .enter()
+            .append("rect")
+            .attr("x", d => d.x0)
+            .attr("y", d => d.y0)
+            .attr("width", d => d.x1 - d.x0)
+            .attr("height", d => d.y1 - d.y0)
+            .style("fill", d => depthScale(d.depth))
+            .style("stroke", "black")
+            .on("mousemove", function (d) {
+                tool.style("left", d3.event.pageX + 10 + "px")
+                tool.style("top", d3.event.pageY - 20 + "px")
+                tool.style("display", "inline-block");
+                tool.html(d.data.id + "\nTopic:" + d.data.topic);
+            }).on("mouseout", function (d) {
+            tool.style("display", "none");
+        });
+
+        // Create the id labels
+        d3.select("svg")
+            .selectAll("text")
+            .data(root.leaves())
+            .enter()
+            .append("text")
+            .attr("x", function (d) {
+                return d.x0 + 5
+            })    // +10 to adjust position (more right)
+            .attr("y", function (d) {
+                return d.y0 + 20
+            })    // +20 to adjust position (lower)
+            .text(function (d) {
+                return d.data.id
+            })
+            .attr("font-size", d => {
+                return "0.9em";
+            })
+            .attr("fill", "black");
+
+        var tool = d3.select("body").append("div").attr("class", "toolTip");
+
+
+    })
+
+</script>
 </body>
 </html>

@@ -56,8 +56,10 @@
         // Create the rects
         d3.select("svg")
             .selectAll("rect")
-            .data(root.descendants(),
-                d => d.data.topic)
+            .data(root.descendants()
+                    .filter(function(d) {
+                     return d.depth <=3;
+                    }))
             .enter()
             .append("rect")
             .attr("x", d => d.x0)
@@ -66,7 +68,7 @@
             .attr("height", d => d.y1 - d.y0)
             .style("fill", d => depthScale(d.depth))
             .style("stroke", "black")
-            .on("mousemove", function (d) {
+            .on("mousemove", function (d) { // Create the text tooltip
                 tool.style("left", d3.event.pageX + 10 + "px")
                 tool.style("top", d3.event.pageY - 20 + "px")
                 tool.style("display", "inline-block");
@@ -76,28 +78,28 @@
         });
 
         // Create the id labels
-        d3.select("svg")
-            .selectAll("text")
-            .data(root.leaves())
-            .enter()
-            .append("text")
-            .attr("x", function (d) {
-                return d.x0 + 5
-            })    // +10 to adjust position (more right)
-            .attr("y", function (d) {
-                return d.y0 + 20
-            })    // +20 to adjust position (lower)
-            .text(function (d) {
-                return d.data.id
-            })
-            .attr("font-size", d => {
-                return "0.9em";
-            })
-            .attr("fill", "black");
+        // d3.select("svg")
+        //     .selectAll("text")
+        //     .data(root.leaves())
+        //     .enter()
+        //     .append("text")
+        //     .attr("x", function (d) {
+        //         return d.x0 + 5
+        //     })    // +10 to adjust position (more right)
+        //     .attr("y", function (d) {
+        //         return d.y0 + 20
+        //     })    // +20 to adjust position (lower)
+        //     .text(function (d) {
+        //         return d.data.id
+        //     })
+        //     .attr("font-size", d => {
+        //         return "0.9em";
+        //     })
+        //     .attr("fill", "black");
 
         var tool = d3.select("body").append("div").attr("class", "toolTip");
 
-
+        // function zoomOut()
     })
 
 </script>

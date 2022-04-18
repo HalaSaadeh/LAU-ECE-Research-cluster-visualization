@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8c20a58-5fe5-4fca-a906-4c8320183942" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/circlepackingpage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/treemappage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -54,8 +56,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/index.html" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="JavaScript Debug.circlepackingpage.html">
+    <configuration name="circlepackingpage.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/circlepackingpage.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="treemappage.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/treemappage.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="circlepacking.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/archive/circlepacking.js" working-dir="$PROJECT_DIR$">
@@ -63,7 +68,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.circlepackingpage.html" />
+        <item itemvalue="JavaScript Debug.treemappage.html" />
         <item itemvalue="Node.js.circlepacking.js" />
       </list>
     </recent_temporary>
@@ -80,7 +86,7 @@
       <updated>1649056985500</updated>
       <workItem from="1649056988354" duration="2563000" />
       <workItem from="1649184414515" duration="893000" />
-      <workItem from="1650092273597" duration="26787000" />
+      <workItem from="1650092273597" duration="31143000" />
     </task>
     <servers />
   </component>

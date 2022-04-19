@@ -57,13 +57,18 @@
 
         var packChart = d3.pack();
 
-        packChart.size([500,500])
+        packChart.size([700,650])
+
+        var currentDepth = 0;
+        var maxDepth = root.height;
 
         d3.select("svg")
             .append("g")
             .attr("transform", "translate(100,20)")
             .selectAll("circle")
-            .data(packChart(root).descendants())
+            .data(packChart(root).descendants().filter(function (d) {
+                return d.depth == currentDepth;
+            }))
             .enter()
             .append("circle")
             .attr("r", d => d.r)
@@ -71,26 +76,6 @@
             .attr("cy", d => d.y)
             .style("fill", d => depthScale(d.depth))
             .style("stroke", "black")
-    
-
-        var currentDepth = 0;
-        var maxDepth = root.height;
-
-        // Create the rects
-        d3.select("svg")
-            .selectAll("rect")
-            .data(root.descendants()
-                .filter(function (d) {
-                    return d.depth == currentDepth;
-                }))
-            .enter()
-            .append("rect")
-            .attr("x", d => d.x0)
-            .attr("y", d => d.y0)
-            .attr("width", d => d.x1 - d.x0)
-            .attr("height", d => d.y1 - d.y0)
-            .style("fill", d => depthScale(d.depth))
-            .style("stroke", "white")
             .on("wheel", zoom)
             .on("mousemove", function (d) { // Create the text tooltip
                 tool.style("left", d3.event.pageX + 10 + "px")
@@ -98,9 +83,7 @@
                 tool.style("display", "inline-block");
                 tool.html(d.data.id + "\nTopic:" + d.data.topic);
             }).on("mouseout", function (d) {
-            tool.style("display", "none");
-
-        });
+            tool.style("display", "none");});
 
         var tool = d3.select("body").append("div").attr("class", "toolTip");
 
@@ -117,21 +100,21 @@
                 console.log("current depth:" + currentDepth + " nextDepth:" + nextDepth)
                 currentDepth = nextDepth;
 
-                d3.selectAll("svg > *").remove();
                 d3.select("svg")
-                    .selectAll("rect")
+                    .append("g")
+                    .attr("transform", "translate(100,20)")
+                    .selectAll("circle")
                     .data(root.descendants()
                         .filter(function (d) {
                             return d.depth <= nextDepth;
                         }))
                     .enter()
-                    .append("rect")
-                    .attr("x", d => d.x0)
-                    .attr("y", d => d.y0)
-                    .attr("width", d => d.x1 - d.x0)
-                    .attr("height", d => d.y1 - d.y0)
+                    .append("circle")
+                    .attr("r", d => d.r)
+                    .attr("cx", d => d.x)
+                    .attr("cy", d => d.y)
                     .style("fill", d => depthScale(d.depth))
-                    .style("stroke", "white")
+                    .style("stroke", "black")
                     .on("wheel", zoom)
                     .on("mousemove", function (d) { // Create the text tooltip
                         tool.style("left", d3.event.pageX + 10 + "px")

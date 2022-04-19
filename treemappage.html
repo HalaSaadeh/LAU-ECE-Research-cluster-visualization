@@ -50,8 +50,10 @@
                     return b.height - a.height || b.value - a.value;
                 });
             console.log(root);
-            var depthScale = d3.scaleOrdinal()
-                .range(["#5EAFC6", "#FE9922", "#93c464", "#75739F"]);
+            var depthScale = d3.scaleLinear()
+                    .domain([0, 10])
+                    .range([ "hsl(228,30%,40%)", "hsl(152,80%,80%)"])
+                    .interpolate(d3.interpolateHcl)
 
             var treemapLayout = d3.treemap()
                 .size([900, 700])
@@ -59,12 +61,14 @@
 
             treemapLayout(root);
 
+            var currentDepth = 0;
+
             // Create the rects
             d3.select("svg")
                 .selectAll("rect")
                 .data(root.descendants()
                     .filter(function (d) {
-                        return d.depth == 0;
+                        return d.depth == currentDepth;
                     }))
                 .enter()
                 .append("rect")
@@ -90,14 +94,13 @@
             function zoom(d) {
 
                 var direction = d3.event.wheelDelta < 0 ? 'down' : 'up';
-                // zoom(direction === 'up' ? d : d.parent);
 
                 // console.log('clicked: ' + d.data.id + ', depth: ' + d.depth);
 
-                var currentDepth = d.depth;
-
-                var nextDepth = direction === 'up' ? currentDepth + 1 : currentDepth -1;
+                var nextDepth = direction === 'up' ? currentDepth + 1 : currentDepth - 1;
                 console.log("current depth:" + currentDepth + " nextDepth:" + nextDepth)
+                currentDepth = nextDepth;
+
 
                 d3.select("svg")
                     .selectAll("rect")

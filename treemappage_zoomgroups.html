@@ -69,7 +69,7 @@
                 .selectAll("rect")
                 .data(root.descendants()
                     .filter(function (d) {
-                        return d.depth == currentDepth;
+                        return (d.depth <= currentDepth);
                     }))
                 .enter()
                 .append("rect")
@@ -110,7 +110,7 @@
                     .selectAll("rect")
                     .data(root.descendants()
                         .filter(function (d) {
-                            return d.depth <= nextDepth;
+                            return (d.depth <= currentDepth);
                         }))
                     .enter()
                     .append("rect")

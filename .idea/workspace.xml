@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8c20a58-5fe5-4fca-a906-4c8320183942" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/circlepacking_zoomgroups_hideparents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/treemap_zoomgroups_hideparents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/treemap_zoomsequential.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circlepackingpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/circlepackingpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circlepackingpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/circlepackingpage_zoomgroups.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treemappage.html" beforeDir="false" afterPath="$PROJECT_DIR$/treemappage_zoomgroups.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,11 +58,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.circlepackingpage.html">
-    <configuration name="circlepackingpage.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/circlepackingpage.html" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="JavaScript Debug.circlepacking_zoomgroups_hideparents.html">
+    <configuration name="circlepacking_zoomgroups_hideparents.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/circlepacking_zoomgroups_hideparents.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="treemappage.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/treemappage.html" useBuiltInWebServerPort="true">
+    <configuration name="circlepackingpage_zoomgroups.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/circlepackingpage_zoomgroups.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="treemap_zoomgroups_hideparents.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/treemap_zoomgroups_hideparents.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="treemappage_zoomgroups.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/treemappage_zoomgroups.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="circlepacking.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/archive/circlepacking.js" working-dir="$PROJECT_DIR$">
@@ -66,8 +76,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.circlepackingpage.html" />
-        <item itemvalue="JavaScript Debug.treemappage.html" />
+        <item itemvalue="JavaScript Debug.circlepacking_zoomgroups_hideparents.html" />
+        <item itemvalue="JavaScript Debug.circlepackingpage_zoomgroups.html" />
+        <item itemvalue="JavaScript Debug.treemap_zoomgroups_hideparents.html" />
+        <item itemvalue="JavaScript Debug.treemappage_zoomgroups.html" />
         <item itemvalue="Node.js.circlepacking.js" />
       </list>
     </recent_temporary>
@@ -84,7 +96,7 @@
       <updated>1649056985500</updated>
       <workItem from="1649056988354" duration="2563000" />
       <workItem from="1649184414515" duration="893000" />
-      <workItem from="1650092273597" duration="48884000" />
+      <workItem from="1650092273597" duration="51377000" />
     </task>
     <servers />
   </component>

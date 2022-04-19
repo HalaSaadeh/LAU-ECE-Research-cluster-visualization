@@ -28,79 +28,105 @@
 </div>
 <script>
 
+    width = 900;
+    height = 700;
+
+    x = d3.scaleLinear().domain([0, width]).range([0, width]);
+    y = d3.scaleLinear().domain([0, height]).range([0, height]);
+
     var data = d3.json('cluster_topic_index.json', function (data) {
-        var stratify = d3.stratify()
-            .parentId(function (d) {
-                return d.id.substring(0, d.id.lastIndexOf("."));
+            var stratify = d3.stratify()
+                .parentId(function (d) {
+                    return d.id.substring(0, d.id.lastIndexOf("."));
+                })
+                .id(function (d) {
+                    return d.id;
+                });
+
+            var root = stratify(data).sum(function (d) {
+                return 1;
             })
-            .id(function (d) {
-                return d.id;
-            });
+                .sort(function (a, b) {
+                    return b.height - a.height || b.value - a.value;
+                });
+            console.log(root);
+            var depthScale = d3.scaleOrdinal()
+                .range(["#5EAFC6", "#FE9922", "#93c464", "#75739F"]);
 
-        var root = stratify(data).sum(function (d) {
-            return 1;
-        })
-            .sort(function (a, b) {
-                return b.height - a.height || b.value - a.value;
-            });
-        console.log(root);
-        var depthScale = d3.scaleOrdinal()
-            .range(["#5EAFC6", "#FE9922", "#93c464", "#75739F"]);
+            var treemapLayout = d3.treemap()
+                .size([900, 700])
+                .padding(d => 10);
 
-        var treemapLayout = d3.treemap()
-            .size([900, 700])
-            .padding(d => d.depth + 10);
+            treemapLayout(root);
 
-        treemapLayout(root);
-
-        // Create the rects
-        d3.select("svg")
-            .selectAll("rect")
-            .data(root.descendants()
-                    .filter(function(d) {
-                     return d.depth <=3;
+            // Create the rects
+            d3.select("svg")
+                .selectAll("rect")
+                .data(root.descendants()
+                    .filter(function (d) {
+                        return d.depth == 0;
                     }))
-            .enter()
-            .append("rect")
-            .attr("x", d => d.x0)
-            .attr("y", d => d.y0)
-            .attr("width", d => d.x1 - d.x0)
-            .attr("height", d => d.y1 - d.y0)
-            .style("fill", d => depthScale(d.depth))
-            .style("stroke", "black")
-            .on("mousemove", function (d) { // Create the text tooltip
-                tool.style("left", d3.event.pageX + 10 + "px")
-                tool.style("top", d3.event.pageY - 20 + "px")
-                tool.style("display", "inline-block");
-                tool.html(d.data.id + "\nTopic:" + d.data.topic);
-            }).on("mouseout", function (d) {
-            tool.style("display", "none");
-        });
+                .enter()
+                .append("rect")
+                .attr("x", d => d.x0)
+                .attr("y", d => d.y0)
+                .attr("width", d => d.x1 - d.x0)
+                .attr("height", d => d.y1 - d.y0)
+                .style("fill", d => depthScale(d.depth))
+                .style("stroke", "white")
+                .on("wheel", zoom)
+                .on("mousemove", function (d) { // Create the text tooltip
+                    tool.style("left", d3.event.pageX + 10 + "px")
+                    tool.style("top", d3.event.pageY - 20 + "px")
+                    tool.style("display", "inline-block");
+                    tool.html(d.data.id + "\nTopic:" + d.data.topic);
+                }).on("mouseout", function (d) {
+                tool.style("display", "none");
 
-        // Create the id labels
-        // d3.select("svg")
-        //     .selectAll("text")
-        //     .data(root.leaves())
-        //     .enter()
-        //     .append("text")
-        //     .attr("x", function (d) {
-        //         return d.x0 + 5
-        //     })    // +10 to adjust position (more right)
-        //     .attr("y", function (d) {
-        //         return d.y0 + 20
-        //     })    // +20 to adjust position (lower)
-        //     .text(function (d) {
-        //         return d.data.id
-        //     })
-        //     .attr("font-size", d => {
-        //         return "0.9em";
-        //     })
-        //     .attr("fill", "black");
+            });
 
-        var tool = d3.select("body").append("div").attr("class", "toolTip");
+            var tool = d3.select("body").append("div").attr("class", "toolTip");
 
-        // function zoomOut()
-    })
+            function zoom(d) {
+
+                var direction = d3.event.wheelDelta < 0 ? 'down' : 'up';
+                // zoom(direction === 'up' ? d : d.parent);
+
+                // console.log('clicked: ' + d.data.id + ', depth: ' + d.depth);
+
+                var currentDepth = d.depth;
+
+                var nextDepth = direction === 'up' ? currentDepth + 1 : currentDepth -1;
+                console.log("current depth:" + currentDepth + " nextDepth:" + nextDepth)
+
+                d3.select("svg")
+                    .selectAll("rect")
+                    .data(root.descendants()
+                        .filter(function (d) {
+                            return d.depth <= nextDepth;
+                        }))
+                    .enter()
+                    .append("rect")
+                    .attr("x", d => d.x0)
+                    .attr("y", d => d.y0)
+                    .attr("width", d => d.x1 - d.x0)
+                    .attr("height", d => d.y1 - d.y0)
+                    .style("fill", d => depthScale(d.depth))
+                    .style("stroke", "white")
+                    .on("click", zoom)
+                    .on("mousemove", function (d) { // Create the text tooltip
+                        tool.style("left", d3.event.pageX + 10 + "px")
+                        tool.style("top", d3.event.pageY - 20 + "px")
+                        tool.style("display", "inline-block");
+                        tool.html(d.data.id + "\nTopic:" + d.data.topic);
+                    }).on("mouseout", function (d) {
+                    tool.style("display", "none");
+                })
+
+
+            }
+        }
+    )
 
 </script>
 </body>

@@ -24,7 +24,7 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
 <div id="viz">
-    <svg style="width:900px;height:800px;"></svg>
+    <svg style="width:900px;height:700px;"></svg>
 </div>
 <script>
 
@@ -51,9 +51,9 @@
                 });
             console.log(root);
             var depthScale = d3.scaleLinear()
-                    .domain([0, 10])
-                    .range([ "hsl(228,30%,40%)", "hsl(152,80%,80%)"])
-                    .interpolate(d3.interpolateHcl)
+                .domain([0, 10])
+                .range(["hsl(228,30%,40%)", "hsl(152,80%,80%)"])
+                .interpolate(d3.interpolateHcl)
 
             var treemapLayout = d3.treemap()
                 .size([900, 700])
@@ -62,6 +62,7 @@
             treemapLayout(root);
 
             var currentDepth = 0;
+            var maxDepth = root.height;
 
             // Create the rects
             d3.select("svg")
@@ -91,17 +92,20 @@
 
             var tool = d3.select("body").append("div").attr("class", "toolTip");
 
+
             function zoom(d) {
 
                 var direction = d3.event.wheelDelta < 0 ? 'down' : 'up';
 
-                // console.log('clicked: ' + d.data.id + ', depth: ' + d.depth);
+                // console.log('clicked: ' + d.data.id + ', depth: ' +
+
 
                 var nextDepth = direction === 'up' ? currentDepth + 1 : currentDepth - 1;
+                if (nextDepth!=-1 && nextDepth!=maxDepth+1){
                 console.log("current depth:" + currentDepth + " nextDepth:" + nextDepth)
                 currentDepth = nextDepth;
 
-
+                d3.selectAll("svg > *").remove();
                 d3.select("svg")
                     .selectAll("rect")
                     .data(root.descendants()
@@ -128,7 +132,7 @@
 
 
             }
-        }
+        }}
     )
 
 </script>

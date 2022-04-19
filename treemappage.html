@@ -113,7 +113,7 @@
                     .attr("height", d => d.y1 - d.y0)
                     .style("fill", d => depthScale(d.depth))
                     .style("stroke", "white")
-                    .on("click", zoom)
+                    .on("wheel", zoom)
                     .on("mousemove", function (d) { // Create the text tooltip
                         tool.style("left", d3.event.pageX + 10 + "px")
                         tool.style("top", d3.event.pageY - 20 + "px")

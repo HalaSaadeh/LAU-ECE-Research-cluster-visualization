@@ -43,12 +43,11 @@
                 return d.id;
             });
 
-        var root = stratify(data).sum(function (d) {
-            return 1;
-        })
-            .sort(function (a, b) {
-                return b.height - a.height || b.value - a.value;
-            });
+        var roots= stratify(data)
+
+        var root = d3
+            .hierarchy(roots).sum(d => (d.children ? 0 : 1))
+            .sort(function(a, b) { return b.height - a.height || b.value - a.value; });
         console.log(root);
         var depthScale = d3.scaleLinear()
             .domain([0, 10])
@@ -84,7 +83,7 @@
                 tool.style("left", d3.event.pageX + 10 + "px")
                 tool.style("top", d3.event.pageY - 20 + "px")
                 tool.style("display", "inline-block");
-                tool.html(d.data.id + "\nTopic:" + d.data.topic);
+                tool.html(d.data.data.id + "\nTopic:" + d.data.data.topic);
             }).on("mouseout", function (d) {
             tool.style("display", "none");
 
@@ -125,7 +124,7 @@
                         tool.style("left", d3.event.pageX + 10 + "px")
                         tool.style("top", d3.event.pageY - 20 + "px")
                         tool.style("display", "inline-block");
-                        tool.html(d.data.id + "\nTopic:" + d.data.topic);
+                        tool.html(d.data.data.id + "\nTopic:" + d.data.data.topic);
                     }).on("mouseout", function (d) {
                     tool.style("display", "none");
                 })

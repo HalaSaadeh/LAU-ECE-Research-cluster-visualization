@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8c20a58-5fe5-4fca-a906-4c8320183942" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TBchangeInCases2006to2012.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/budget-data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster_topic_index.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster_topic_index.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/d3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/treemappage_zoomgroups.html" beforeDir="false" afterPath="$PROJECT_DIR$/treemappage_zoomgroups.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +57,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.treemappage_zoomgroups.html">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration name="circlepacking_zoomgroups_hideparents.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/undergrad-research-visualization/circlepacking_zoomgroups_hideparents.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -81,8 +75,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.treemappage_zoomgroups.html" />
         <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.treemappage_zoomgroups.html" />
         <item itemvalue="JavaScript Debug.circlepacking_zoomgroups_laf.html" />
         <item itemvalue="JavaScript Debug.circlepackingpage_zoomgroups.html" />
         <item itemvalue="JavaScript Debug.circlepacking_zoomgroups_hideparents.html" />
@@ -104,7 +98,7 @@
       <workItem from="1650092273597" duration="55816000" />
       <workItem from="1650692932914" duration="3154000" />
       <workItem from="1650900885276" duration="7802000" />
-      <workItem from="1651035451271" duration="942000" />
+      <workItem from="1651035451271" duration="2039000" />
     </task>
     <servers />
   </component>

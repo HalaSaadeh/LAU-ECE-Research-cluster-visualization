@@ -83,53 +83,43 @@
 
     .node.level-0 {
         z-index: 10;
-        font-size: 10vmin;
         display: none;
     }
 
     .node.level-1 {
         z-index: 9;
-        font-size: 3vmin;
     }
 
     .node.level-2 {
         z-index: 8;
-        font-size: 2vmin;
     }
 
     .node.level-3 {
         z-index: 7;
-        font-size: 2.5vmin;
     }
 
     .node.level-4 {
         z-index: 6;
-        font-size: 2.5vmin;
     }
 
     .node.level-5 {
         z-index: 5;
-        font-size: 2.5vmin;
     }
 
     .node.level-6 {
         z-index: 4;
-        font-size: 2.5vmin;
     }
 
     .node.level-7 {
         z-index: 3;
-        font-size: 2.5vmin;
     }
 
     .node.level-8 {
         z-index: 2;
-        font-size: 2.5vmin;
     }
 
     .node.level-9 {
         z-index: 1;
-        font-size: 2.5vmin;
     }
 
 </style>
@@ -154,8 +144,12 @@
                 return d.id;
             });
 
-        var nodes = stratify(data).sum(d => (d.children ? d.children[0].value + d.children[1].value : 1))
-            .sort((a, b) => b.value - a.value);
+        var root = stratify(data)
+
+        var nodes = d3
+            .hierarchy(root).sum(d => (d.children ? 0 : 1))
+            .sort(function(a, b) { return b.height - a.height || b.value - a.value; });
+
         console.log(nodes);
         var width = height = 100, // % of the parent element
 
@@ -212,7 +206,7 @@
         .append("p")
         .attr("class", "label")
         .text(function (d) {
-            return d.data.topic ? d.data.topic : "---";
+            return d.data.data.topic ? d.data.data.topic : "---";
         });
     //.style("font-size", "")
     //.style("opacity", function(d) { return isOverflowed( d.parent ) ? 1 : 0; });
@@ -223,7 +217,7 @@
 
     function zoom(d) { // http://jsfiddle.net/ramnathv/amszcymq/
 
-        console.log('clicked: ' + d.data.topic + ', depth: ' + d.depth);
+        console.log('clicked: ' + d.data.data.topic + ', depth: ' + d.depth);
 
         currentDepth = d.depth;
         parent.datum(d.parent || nodes);

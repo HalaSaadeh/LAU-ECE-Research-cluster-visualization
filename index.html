@@ -48,7 +48,7 @@
         position: absolute;
         background: transparent url("") no-repeat 50%/cover;
         overflow: hidden;
-        opacity: 0.85;
+        opacity: 0.9;
         transition: opacity 0.8s;
         cursor: pointer;
         font-size: 3vmin;
@@ -199,7 +199,7 @@
         //.style("background-image", function(d) { return d.value ? imgUrl + d.value : ""; })
         //.style("background-image", function(d) { return d.value ? "url(http://placekitten.com/g/300/300)" : "none"; })
         .style("background-color", function (d) {
-            return color(0);
+            return color(d.depth);
         })
         .on("click", zoom)
         .append("p")

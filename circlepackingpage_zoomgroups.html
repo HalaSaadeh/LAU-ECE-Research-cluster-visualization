@@ -35,6 +35,8 @@
     x = d3.scaleLinear().domain([0, width]).range([0, width]);
     y = d3.scaleLinear().domain([0, height]).range([0, height]);
 
+    var startTime = performance.now();
+
     var data = d3.json('cluster_topic_index.json', function (data) {
         var stratify = d3.stratify()
             .parentId(function (d) {
@@ -88,8 +90,12 @@
 
         var tool = d3.select("body").append("div").attr("class", "toolTip");
 
+        var endTime = performance.now();
+        console.log(`Index loading time ${endTime - startTime} milliseconds`);
 
         function zoom(d) {
+
+            var startTime = performance.now();
 
             var direction = d3.event.wheelDelta < 0 ? 'down' : 'up';
 
@@ -128,6 +134,10 @@
 
 
             }
+
+            var endTime = performance.now();
+            console.log(`Zooming time time ${endTime - startTime} milliseconds`);
+
         }}
     )
 

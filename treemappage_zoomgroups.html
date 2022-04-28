@@ -35,6 +35,7 @@
     x = d3.scaleLinear().domain([0, width]).range([0, width]);
     y = d3.scaleLinear().domain([0, height]).range([0, height]);
 
+    var startTime = performance.now();
     var data = d3.json('cluster_topic_index.json', function (data) {
 
             var stratify = d3.stratify()
@@ -45,11 +46,13 @@
                     return d.id;
                 });
 
-        var roots= stratify(data)
+            var roots = stratify(data)
 
-        var root = d3
-            .hierarchy(roots).sum(d => (d.children ? 0 : 1))
-            .sort(function(a, b) { return b.height - a.height || b.value - a.value; });
+            var root = d3
+                .hierarchy(roots).sum(d => (d.children ? 0 : 1))
+                .sort(function (a, b) {
+                    return b.height - a.height || b.value - a.value;
+                });
             console.log(root);
             var depthScale = d3.scaleLinear()
                 .domain([0, 10])
@@ -93,47 +96,53 @@
 
             var tool = d3.select("body").append("div").attr("class", "toolTip");
 
+            var endTime = performance.now()
+            console.log(`Index loading time ${endTime - startTime} milliseconds`)
 
             function zoom(d) {
-
+                var startTime = performance.now();
                 var direction = d3.event.wheelDelta < 0 ? 'down' : 'up';
 
                 // console.log('clicked: ' + d.data.id + ', depth: ' +
 
 
                 var nextDepth = direction === 'up' ? currentDepth + 1 : currentDepth - 1;
-                if (nextDepth!=-1 && nextDepth!=maxDepth+1){
-                console.log("current depth:" + currentDepth + " nextDepth:" + nextDepth)
-                currentDepth = nextDepth;
+                if (nextDepth != -1 && nextDepth != maxDepth + 1) {
+                    console.log("current depth:" + currentDepth + " nextDepth:" + nextDepth)
+                    currentDepth = nextDepth;
 
-                d3.selectAll("svg > *").remove();
-                d3.select("svg")
-                    .selectAll("rect")
-                    .data(root.descendants()
-                        .filter(function (d) {
-                            return (d.depth <= currentDepth);
-                        }))
-                    .enter()
-                    .append("rect")
-                    .attr("x", d => d.x0)
-                    .attr("y", d => d.y0)
-                    .attr("width", d => d.x1 - d.x0)
-                    .attr("height", d => d.y1 - d.y0)
-                    .style("fill", d => depthScale(d.depth))
-                    .style("stroke", "white")
-                    .on("wheel", zoom)
-                    .on("mousemove", function (d) { // Create the text tooltip
-                        tool.style("left", d3.event.pageX + 10 + "px")
-                        tool.style("top", d3.event.pageY - 20 + "px")
-                        tool.style("display", "inline-block");
-                        tool.html(d.data.data.id + "\nTopic:" + d.data.data.topic);
-                    }).on("mouseout", function (d) {
-                    tool.style("display", "none");
-                })
+                    d3.selectAll("svg > *").remove();
+                    d3.select("svg")
+                        .selectAll("rect")
+                        .data(root.descendants()
+                            .filter(function (d) {
+                                return (d.depth <= currentDepth);
+                            }))
+                        .enter()
+                        .append("rect")
+                        .attr("x", d => d.x0)
+                        .attr("y", d => d.y0)
+                        .attr("width", d => d.x1 - d.x0)
+                        .attr("height", d => d.y1 - d.y0)
+                        .style("fill", d => depthScale(d.depth))
+                        .style("stroke", "white")
+                        .on("wheel", zoom)
+                        .on("mousemove", function (d) { // Create the text tooltip
+                            tool.style("left", d3.event.pageX + 10 + "px")
+                            tool.style("top", d3.event.pageY - 20 + "px")
+                            tool.style("display", "inline-block");
+                            tool.html(d.data.data.id + "\nTopic:" + d.data.data.topic);
+                        }).on("mouseout", function (d) {
+                        tool.style("display", "none");
+                    })
 
 
+                }
+
+                var endTime = performance.now();
+                console.log(`Zooming time time ${endTime - startTime} milliseconds`);
             }
-        }}
+        }
     )
 
 </script>

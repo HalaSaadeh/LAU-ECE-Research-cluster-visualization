@@ -122,7 +122,12 @@
                     .attr("r", d => d.r)
                     .attr("cx", d => d.x)
                     .attr("cy", d => d.y)
-                    .style("fill", d => depthScale(d.depth))
+                    .style("fill", function (d) {
+                        if(!d.children)
+                            return "#e8d3b9";
+                        else
+                            return depthScale(d.depth);
+                    })
                     .style("stroke", "black")
                     .on("wheel", zoom)
                     .on("mousemove", function (d) { // Create the text tooltip

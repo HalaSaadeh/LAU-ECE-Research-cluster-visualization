@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<Title>Treemap Interactive</Title>
 <head>
+
 </head>
 <body>
 <style type="text/css">
@@ -135,6 +137,7 @@
 
 
     var data = d3.json('cluster_topic_index.json', function (data) {
+
         var stratify = d3.stratify()
             .parentId(function (d) {
                 return d.id.substring(0, d.id.lastIndexOf("."));
@@ -163,7 +166,7 @@
             treemap = d3.treemap()
                 .size([width, height])
                 //.tile(d3.treemapResquarify) // doesn't work - height & width is 100%
-                .padding(0)
+                .padding(0.5)
                 .round(false), //true
 
         currentDepth;

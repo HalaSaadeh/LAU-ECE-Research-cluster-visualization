@@ -35,10 +35,11 @@
     x = d3.scaleLinear().domain([0, width]).range([0, width]);
     y = d3.scaleLinear().domain([0, height]).range([0, height]);
 
-    var startTime = performance.now();
-    var data = d3.json('cluster_topic_index.json', function (data) {
+    var data = d3.json('cluster_topic_index5.json', function (data) {
+        var startTime = performance.now();
 
-            var stratify = d3.stratify()
+
+        var stratify = d3.stratify()
                 .parentId(function (d) {
                     return d.id.substring(0, d.id.lastIndexOf("."));
                 })
@@ -46,7 +47,9 @@
                     return d.id;
                 });
 
-            var roots = stratify(data)
+            var roots = stratify(data);
+
+
 
             var root = d3
                 .hierarchy(roots).sum(d => (d.children ? 0 : 1))
@@ -59,6 +62,11 @@
                 .range(["hsl(228,30%,40%)", "hsl(152,80%,80%)"])
                 .interpolate(d3.interpolateHcl)
 
+        var endTime = performance.now();
+        console.log(`Index loading time ${endTime - startTime} milliseconds`);
+
+        var startTime = performance.now();
+
             var treemapLayout = d3.treemap()
                 .size([width, height])
                 .padding(d => 15);
@@ -69,14 +77,18 @@
             var maxDepth = root.height;
 
             // Create the rects
-            d3.select("svg")
-                .selectAll("rect")
+
+            var svg = d3.select("svg");
+
+            var node = svg.selectAll("g")
                 .data(root.descendants()
                     .filter(function (d) {
                         return (d.depth <= currentDepth);
                     }))
-                .enter()
-                .append("rect")
+                .enter().append("g");
+
+
+            node.append("rect")
                 .attr("x", d => d.x0)
                 .attr("y", d => d.y0)
                 .attr("width", d => d.x1 - d.x0)
@@ -94,10 +106,30 @@
 
             });
 
+
+            // node.append("text")
+            //     .attr("x", function (d) {
+            //         return d.x0 + d.x1 / 2
+            //     })
+            //     .attr("y", function (d) {
+            //         return d.y0 + d.y1 / 2
+            //     })
+            //     .attr("text-anchor", "middle")
+            //     .attr("font-size", d => {
+            //         if (d === root) return "1em";
+            //         const width = x(d.x1) - x(d.x0), height = y(d.y1) - y(d.y0);
+            //         return Math.max(Math.min(width / 5, height / 2, Math.sqrt((width * width + height * height)) / 10), 9)
+            //     })
+            //     .text(function (d) {
+            //         return d.data.data.topic
+            //     }).selectAll("tspan");
+
+
             var tool = d3.select("body").append("div").attr("class", "toolTip");
 
-            var endTime = performance.now()
-            console.log(`Index loading time ${endTime - startTime} milliseconds`)
+            var endTime = performance.now();
+            console.log(`Visual rendering time ${endTime - startTime} milliseconds`);
+
 
             function zoom(d) {
                 var startTime = performance.now();
@@ -112,20 +144,21 @@
                     currentDepth = nextDepth;
 
                     d3.selectAll("svg > *").remove();
-                    d3.select("svg")
+                    var node = d3.select("svg")
                         .selectAll("rect")
                         .data(root.descendants()
                             .filter(function (d) {
                                 return (d.depth <= currentDepth);
                             }))
-                        .enter()
-                        .append("rect")
+                        .enter();
+
+                    node.append("rect")
                         .attr("x", d => d.x0)
                         .attr("y", d => d.y0)
                         .attr("width", d => d.x1 - d.x0)
                         .attr("height", d => d.y1 - d.y0)
                         .style("fill", function (d) {
-                            if(!d.children)
+                            if (!d.children)
                                 return "#e8d3b9";
                             else
                                 return depthScale(d.depth);
@@ -139,7 +172,36 @@
                             tool.html(d.data.data.id + "\nTopic:" + d.data.data.topic);
                         }).on("mouseout", function (d) {
                         tool.style("display", "none");
-                    })
+                    });
+
+                    // node.append("text")
+                    //     .attr("x", function (d) {
+                    //         return d.x0 + d.x1 / 2
+                    //     })
+                    //     .attr("y", function (d) {
+                    //         return d.y0 + d.y1 / 2
+                    //     })
+                    //     .attr("text-anchor", "middle")
+                    //     .attr("font-size", d => {
+                    //         return "1em";
+                    //     })
+                    //     .selectAll("tspan")
+                    //     .data(function (d) {
+                    //         return d.data.data.topic;
+                    //     })
+                    //     .enter().append("tspan")
+                    //     .attr("x", function (d, i) {
+                    //         return d.x0 + i * 10;
+                    //     })
+                    //     .attr("y", function (d) {
+                    //         return d.y0;
+                    //     })
+                    //     .text(function (d) {
+                    //         return d;
+                    //     })
+                    //     .text(function (d) {
+                    //         return d.data.data.topic
+                    //     });
 
 
                 }

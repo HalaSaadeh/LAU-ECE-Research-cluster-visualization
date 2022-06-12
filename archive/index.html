@@ -166,7 +166,7 @@
             treemap = d3.treemap()
                 .size([width, height])
                 //.tile(d3.treemapResquarify) // doesn't work - height & width is 100%
-                .padding(0.5)
+                .paddingInner(0.5)
                 .round(false), //true
 
         currentDepth;

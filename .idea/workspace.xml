@@ -2,12 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8c20a58-5fe5-4fca-a906-4c8320183942" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cluster_topic_index1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cluster_topic_index_laf1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/cluster_topic_index1000.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/cluster_topic_index180.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/cluster_topic_index240.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/cluster_topic_index300.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/cluster_topic_index4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/cluster_topic_index400.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/cluster_topic_index5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/cluster_topic_index500.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/cluster_topic_index600.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/cluster_topic_index700.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/cluster_topic_index800.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/cluster_topic_index900.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circlepacking_zoomgroups_laf.html" beforeDir="false" afterPath="$PROJECT_DIR$/circlepacking_zoomgroups_laf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/budget-data.json" beforeDir="false" afterPath="$PROJECT_DIR$/archive/budget-data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circlepacking_zoomgroups_hideparents.html" beforeDir="false" afterPath="$PROJECT_DIR$/archive/circlepacking_zoomgroups_hideparents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circlepacking_zoomgroups_laf.html" beforeDir="false" afterPath="$PROJECT_DIR$/archive/circlepacking_zoomgroups_laf.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/circlepackingpage_zoomgroups.html" beforeDir="false" afterPath="$PROJECT_DIR$/circlepackingpage_zoomgroups.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treemap_zoomgroups_laf.html" beforeDir="false" afterPath="$PROJECT_DIR$/treemap_zoomgroups_laf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster_topic_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/cluster_topic_index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster_topic_index1.json" beforeDir="false" afterPath="$PROJECT_DIR$/archive/cluster_topic_index1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster_topic_index_laf.json" beforeDir="false" afterPath="$PROJECT_DIR$/archive/cluster_topic_index_laf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster_topic_index_laf1.json" beforeDir="false" afterPath="$PROJECT_DIR$/archive/cluster_topic_index_laf1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc_table_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/archive/doc_table_index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/archive/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treemap_zoomgroups_hideparents.html" beforeDir="false" afterPath="$PROJECT_DIR$/archive/treemap_zoomgroups_hideparents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treemap_zoomgroups_laf.html" beforeDir="false" afterPath="$PROJECT_DIR$/archive/treemap_zoomgroups_laf.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treemappage_zoomgroups.html" beforeDir="false" afterPath="$PROJECT_DIR$/treemappage_zoomgroups.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,12 +62,12 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Research\Implementation\undergrad-research-visualization\archive" />
       <recent name="D:\Research\Implementation\undergrad-research-visualization" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Research\Implementation\undergrad-research-visualization" />
-      <recent name="D:\Research\Implementation\undergrad-research-visualization\archive" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -62,17 +82,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.treemap_zoomgroups_laf.html">
-    <configuration name="circlepacking_zoomgroups_laf.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/circlepacking_zoomgroups_laf.html" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="JavaScript Debug.circlepackingpage_zoomgroups.html">
+    <configuration name="circlepacking_zoomgroups_laf.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/archive/circlepacking_zoomgroups_laf.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="circlepackingpage_zoomgroups.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/circlepackingpage_zoomgroups.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/index.html" useBuiltInWebServerPort="true">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/archive/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="treemap_zoomgroups_laf.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/treemap_zoomgroups_laf.html" useBuiltInWebServerPort="true">
+    <configuration name="treemap_zoomgroups_laf.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/archive/treemap_zoomgroups_laf.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="treemappage_zoomgroups.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/undergrad-research-visualization/treemappage_zoomgroups.html" useBuiltInWebServerPort="true">
@@ -80,11 +100,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.treemap_zoomgroups_laf.html" />
-        <item itemvalue="JavaScript Debug.circlepacking_zoomgroups_laf.html" />
+        <item itemvalue="JavaScript Debug.circlepackingpage_zoomgroups.html" />
         <item itemvalue="JavaScript Debug.treemappage_zoomgroups.html" />
         <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="JavaScript Debug.circlepackingpage_zoomgroups.html" />
+        <item itemvalue="JavaScript Debug.treemap_zoomgroups_laf.html" />
+        <item itemvalue="JavaScript Debug.circlepacking_zoomgroups_laf.html" />
       </list>
     </recent_temporary>
   </component>
@@ -103,7 +123,16 @@
       <workItem from="1650092273597" duration="55816000" />
       <workItem from="1650692932914" duration="3154000" />
       <workItem from="1650900885276" duration="7802000" />
-      <workItem from="1651035451271" duration="20998000" />
+      <workItem from="1651035451271" duration="28463000" />
+      <workItem from="1651167304376" duration="593000" />
+      <workItem from="1651231101705" duration="596000" />
+      <workItem from="1652274037089" duration="1174000" />
+      <workItem from="1652400530741" duration="610000" />
+      <workItem from="1654420110658" duration="4133000" />
+      <workItem from="1654436082298" duration="2805000" />
+      <workItem from="1654452716247" duration="2423000" />
+      <workItem from="1654540508921" duration="790000" />
+      <workItem from="1655025784561" duration="101000" />
     </task>
     <servers />
   </component>

@@ -35,9 +35,11 @@
     x = d3.scaleLinear().domain([0, width]).range([0, width]);
     y = d3.scaleLinear().domain([0, height]).range([0, height]);
 
-    var startTime = performance.now();
 
-    var data = d3.json('cluster_topic_index.json', function (data) {
+    var data = d3.json('cluster_topic_index5.json', function (data) {
+        var startTime = performance.now();
+
+
         var stratify = d3.stratify()
             .parentId(function (d) {
                 return d.id.substring(0, d.id.lastIndexOf("."));
@@ -65,6 +67,11 @@
         var currentDepth = 0;
         var maxDepth = root.height;
 
+        var endTime = performance.now();
+        console.log(`Index loading time ${endTime - startTime} milliseconds`);
+
+        var startTime = performance.now();
+
         d3.select("svg")
             .append("g")
             .attr("transform", "translate(20,20)")
@@ -91,7 +98,7 @@
         var tool = d3.select("body").append("div").attr("class", "toolTip");
 
         var endTime = performance.now();
-        console.log(`Index loading time ${endTime - startTime} milliseconds`);
+        console.log(`Visual rendering time ${endTime - startTime} milliseconds`);
 
         function zoom(d) {
 

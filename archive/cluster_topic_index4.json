@@ -1,0 +1,78 @@
+[
+    {
+        "id": "0",
+        "topic": "['data', 'country', 'indicator', 'national', 'http', 'level']"
+    },
+    {
+        "id": "0.0",
+        "topic": "['biodiversity', 'area', 'protected', 'data', 'country', 'indicator']"
+    },
+    {
+        "id": "0.0.0",
+        "topic": "['biodiversity', 'area', 'protected', 'data', 'country', 'indicator']"
+    },
+    {
+        "id": "0.0.1",
+        "topic": "['biodiversity', 'area', 'protected', 'specie', 'data', 'forest']"
+    },
+    {
+        "id": "0.1",
+        "topic": "['data', 'country', 'indicator', 'national', 'survey', 'level']"
+    },
+    {
+        "id": "0.1.0",
+        "topic": "['water', 'country', 'data', 'transboundary', 'indicator', 'sanitation']"
+    },
+    {
+        "id": "0.1.1",
+        "topic": "['data', 'country', 'indicator', 'national', 'survey', 'level']"
+    },
+    {
+        "id": "0.1.1.0",
+        "topic": "['woman', 'data', 'violence', 'indicator', 'country', 'sexual']"
+    },
+    {
+        "id": "0.1.1.1",
+        "topic": "['data', 'country', 'indicator', 'national', 'survey', 'year']"
+    },
+    {
+        "id": "0.1.1.1.0",
+        "topic": "['data', 'education', 'country', 'learning', 'indicator', 'level']"
+    },
+    {
+        "id": "0.1.1.1.1",
+        "topic": "['data', 'country', 'indicator', 'national', 'survey', 'year']"
+    },
+    {
+        "id": "0.1.1.1.1.0",
+        "topic": "['data', 'country', 'indicator', 'national', 'bank', 'labour']"
+    },
+    {
+        "id": "0.1.1.1.1.0.0",
+        "topic": "['data', 'labour', 'country', 'ilo', 'indicator', 'employment']"
+    },
+    {
+        "id": "0.1.1.1.1.0.1",
+        "topic": "['data', 'country', 'indicator', 'tariff', 'development', 'bank']"
+    },
+    {
+        "id": "0.1.1.1.1.0.1.0",
+        "topic": "['country', 'data', 'tariff', 'bank', 'remittance', 'prosperity']"
+    },
+    {
+        "id": "0.1.1.1.1.0.1.1",
+        "topic": "['data', 'country', 'indicator', 'development', 'revenue', 'national']"
+    },
+    {
+        "id": "0.1.1.1.1.1",
+        "topic": "['data', 'country', 'indicator', 'poverty', 'survey', 'household']"
+    },
+    {
+        "id": "0.1.1.1.1.1.0",
+        "topic": "['poverty', 'data', 'country', 'land', 'indicator', 'household']"
+    },
+    {
+        "id": "0.1.1.1.1.1.1",
+        "topic": "['data', 'country', 'health', 'mortality', 'indicator', 'estimate']"
+    }
+]

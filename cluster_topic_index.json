@@ -1,118 +1,118 @@
 [
     {
         "id": "0",
-        "topic": "['data', 'country', 'indicator', 'national', 'level', 'http']"
+        "topic": "Sustainable development"
     },
     {
         "id": "0.0",
-        "topic": "['biodiversity', 'area', 'protected', 'data', 'country', 'specie']"
+        "topic": "Protect biodiversity"
     },
     {
         "id": "0.0.0",
-        "topic": "['biodiversity', 'area', 'protected', 'data', 'country', 'fishing']"
+        "topic": "Conserve and sustainably use the oceans"
     },
     {
         "id": "0.0.1",
-        "topic": "['area', 'biodiversity', 'specie', 'protected', 'data', 'forest']"
+        "topic": "Protect, restore and promote use of ecosystems"
     },
     {
         "id": "0.1",
-        "topic": "['data', 'country', 'indicator', 'national', 'level', 'survey']"
+        "topic": "Sustainable development in countries"
     },
     {
         "id": "0.1.0",
-        "topic": "['data', 'country', 'indicator', 'national', 'survey', 'year']"
+        "topic": "Climate Safety"
     },
     {
         "id": "0.1.0.0",
-        "topic": "['city', 'waste', 'data', 'indicator', 'transport', 'urban']"
+        "topic": "Make cities and human settlements safe and sustainable"
     },
     {
         "id": "0.1.0.1",
-        "topic": "['disaster', 'sendai', 'oeiwg', 'unisdr', 'data', 'indicator']"
+        "topic": "Combat climate change and its impacts"
     },
     {
         "id": "0.1.1",
-        "topic": "['data', 'country', 'indicator', 'national', 'survey', 'level']"
+        "topic": "Sustainable development, production and consumption"
     },
     {
         "id": "0.1.1.0",
-        "topic": "['convention', 'data', 'scp', 'national', 'dmc', 'material']"
+        "topic": "Ensure sustainable consumption and production"
     },
     {
         "id": "0.1.1.1",
-        "topic": "['data', 'country', 'indicator', 'national', 'survey', 'level']"
+        "topic": "Improve quality of sustainable inclusive life"
     },
     {
         "id": "0.1.1.1.0",
-        "topic": "['water', 'country', 'data', 'transboundary', 'indicator', 'sanitation']"
+        "topic": "Ensure availability and sustainable management of water"
     },
     {
         "id": "0.1.1.1.1",
-        "topic": "['data', 'country', 'indicator', 'national', 'survey', 'level']"
+        "topic": "Achieve equal inclusive living"
     },
     {
         "id": "0.1.1.1.1.0",
-        "topic": "['woman', 'violence', 'data', 'indicator', 'country', 'sexual']"
+        "topic": "Achieve gender equality and empower women"
     },
     {
         "id": "0.1.1.1.1.1",
-        "topic": "['data', 'country', 'indicator', 'national', 'survey', 'level']"
+        "topic": "Improve quality and inclusive living"
     },
     {
         "id": "0.1.1.1.1.1.0",
-        "topic": "['data', 'education', 'learning', 'country', 'teacher', 'indicator']"
+        "topic": "Ensure inclusive and equitable quality education"
     },
     {
         "id": "0.1.1.1.1.1.1",
-        "topic": "['data', 'country', 'indicator', 'survey', 'poverty', 'household']"
+        "topic": "Sustainable secure living"
     },
     {
         "id": "0.1.1.1.1.1.1.0",
-        "topic": "['data', 'country', 'indicator', 'national', 'year', 'development']"
+        "topic": "Build sustainable countries"
     },
     {
         "id": "0.1.1.1.1.1.1.0.0",
-        "topic": "['data', 'country', 'industrial', 'enterprise', 'manufacturing', 'unido']"
+        "topic": "Build resilient infrastructure"
     },
     {
         "id": "0.1.1.1.1.1.1.0.1",
-        "topic": "['data', 'country', 'indicator', 'tariff', 'national', 'year']"
+        "topic": "Sustained growth in countries"
     },
     {
         "id": "0.1.1.1.1.1.1.0.1.0",
-        "topic": "['data', 'labour', 'country', 'ilo', 'occupational', 'child']"
+        "topic": "Promote sustained, inclusive and sustainable economic growth"
     },
     {
         "id": "0.1.1.1.1.1.1.0.1.1",
-        "topic": "['disaster', 'sendai', 'data', 'city', 'indicator', 'oeiwg']"
+        "topic": "Sustainable development in countries"
     },
     {
         "id": "0.1.1.1.1.1.1.0.1.1.0",
-        "topic": "['country', 'data', 'tariff', 'remittance', 'bank', 'prosperity']"
+        "topic": "Reduce inequality within and among countries"
     },
     {
         "id": "0.1.1.1.1.1.1.0.1.1.1",
-        "topic": "['data', 'country', 'indicator', 'development', 'revenue', 'national']"
+        "topic": "Strengthen sustainable development"
     },
     {
         "id": "0.1.1.1.1.1.1.1",
-        "topic": "['data', 'country', 'indicator', 'poverty', 'survey', 'household']"
+        "topic": "Improve security and life"
     },
     {
         "id": "0.1.1.1.1.1.1.1.0",
-        "topic": "['data', 'food', 'genetic', 'country', 'animal', 'level']"
+        "topic": "End hunger and achieve food security"
     },
     {
         "id": "0.1.1.1.1.1.1.1.1",
-        "topic": "['data', 'country', 'tariff', 'indicator', 'development', 'remittance']"
+        "topic": "Improve healthy living everywhere"
     },
     {
         "id": "0.1.1.1.1.1.1.1.1.0",
-        "topic": "['poverty', 'data', 'country', 'land', 'indicator', 'survey']"
+        "topic": "End poverty in all its forms everywhere"
     },
     {
         "id": "0.1.1.1.1.1.1.1.1.1",
-        "topic": "['data', 'country', 'health', 'mortality', 'indicator', 'estimate']"
+        "topic": "Ensure healthy lives and promote well-being"
     }
 ]

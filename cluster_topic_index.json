@@ -1,118 +1,78 @@
 [
-    {
-        "id": "0",
-        "topic": "Sustainable development"
-    },
-    {
-        "id": "0.0",
-        "topic": "Protect biodiversity"
-    },
-    {
-        "id": "0.0.0",
-        "topic": "Conserve and sustainably use the oceans"
-    },
-    {
-        "id": "0.0.1",
-        "topic": "Protect, restore and promote use of ecosystems"
-    },
-    {
-        "id": "0.1",
-        "topic": "Sustainable development in countries"
-    },
-    {
-        "id": "0.1.0",
-        "topic": "Climate Safety"
-    },
-    {
-        "id": "0.1.0.0",
-        "topic": "Make cities and human settlements safe and sustainable"
-    },
-    {
-        "id": "0.1.0.1",
-        "topic": "Combat climate change and its impacts"
-    },
-    {
-        "id": "0.1.1",
-        "topic": "Sustainable development, production and consumption"
-    },
-    {
-        "id": "0.1.1.0",
-        "topic": "Ensure sustainable consumption and production"
-    },
-    {
-        "id": "0.1.1.1",
-        "topic": "Improve quality of sustainable inclusive life"
-    },
-    {
-        "id": "0.1.1.1.0",
-        "topic": "Ensure availability and sustainable management of water"
-    },
-    {
-        "id": "0.1.1.1.1",
-        "topic": "Achieve equal inclusive living"
-    },
-    {
-        "id": "0.1.1.1.1.0",
-        "topic": "Achieve gender equality and empower women"
-    },
-    {
-        "id": "0.1.1.1.1.1",
-        "topic": "Improve quality and inclusive living"
-    },
-    {
-        "id": "0.1.1.1.1.1.0",
-        "topic": "Ensure inclusive and equitable quality education"
-    },
-    {
-        "id": "0.1.1.1.1.1.1",
-        "topic": "Sustainable secure living"
-    },
-    {
-        "id": "0.1.1.1.1.1.1.0",
-        "topic": "Build sustainable countries"
-    },
-    {
-        "id": "0.1.1.1.1.1.1.0.0",
-        "topic": "Build resilient infrastructure"
-    },
-    {
-        "id": "0.1.1.1.1.1.1.0.1",
-        "topic": "Sustained growth in countries"
-    },
-    {
-        "id": "0.1.1.1.1.1.1.0.1.0",
-        "topic": "Promote sustained, inclusive and sustainable economic growth"
-    },
-    {
-        "id": "0.1.1.1.1.1.1.0.1.1",
-        "topic": "Sustainable development in countries"
-    },
-    {
-        "id": "0.1.1.1.1.1.1.0.1.1.0",
-        "topic": "Reduce inequality within and among countries"
-    },
-    {
-        "id": "0.1.1.1.1.1.1.0.1.1.1",
-        "topic": "Strengthen sustainable development"
-    },
-    {
-        "id": "0.1.1.1.1.1.1.1",
-        "topic": "Improve security and life"
-    },
-    {
-        "id": "0.1.1.1.1.1.1.1.0",
-        "topic": "End hunger and achieve food security"
-    },
-    {
-        "id": "0.1.1.1.1.1.1.1.1",
-        "topic": "Improve healthy living everywhere"
-    },
-    {
-        "id": "0.1.1.1.1.1.1.1.1.0",
-        "topic": "End poverty in all its forms everywhere"
-    },
-    {
-        "id": "0.1.1.1.1.1.1.1.1.1",
-        "topic": "Ensure healthy lives and promote well-being"
-    }
+  {
+    "id": "0",
+    "topic": "['data', 'country', 'indicator', 'national', 'http', 'level']"
+  },
+  {
+    "id": "0.0",
+    "topic": "['biodiversity', 'area', 'protected', 'data', 'country', 'indicator']"
+  },
+  {
+    "id": "0.0.0",
+    "topic": "['biodiversity', 'area', 'protected', 'data', 'country', 'indicator']"
+  },
+  {
+    "id": "0.0.1",
+    "topic": "['biodiversity', 'area', 'protected', 'specie', 'data', 'forest']"
+  },
+  {
+    "id": "0.1",
+    "topic": "['data', 'country', 'indicator', 'national', 'survey', 'level']"
+  },
+  {
+    "id": "0.1.0",
+    "topic": "['water', 'country', 'data', 'transboundary', 'indicator', 'sanitation']"
+  },
+  {
+    "id": "0.1.1",
+    "topic": "['data', 'country', 'indicator', 'national', 'survey', 'level']"
+  },
+  {
+    "id": "0.1.1.0",
+    "topic": "['woman', 'data', 'violence', 'indicator', 'country', 'sexual']"
+  },
+  {
+    "id": "0.1.1.1",
+    "topic": "['data', 'country', 'indicator', 'national', 'survey', 'year']"
+  },
+  {
+    "id": "0.1.1.1.0",
+    "topic": "['data', 'education', 'country', 'learning', 'indicator', 'level']"
+  },
+  {
+    "id": "0.1.1.1.0.0",
+    "topic": "a"
+  },
+  {
+    "id": "0.1.1.1.0.0.0",
+    "topic": "a"
+  },
+  {
+    "id": "0.1.1.1.0.0.1",
+    "topic": "a"
+  },
+  {
+    "id": "0.1.1.1.0.1",
+    "topic": "a"
+  },
+  {
+    "id": "0.1.1.1.0.1.0",
+    "topic": "a"
+  },
+  {
+    "id": "0.1.1.1.0.1.1",
+    "topic": "a"
+  },
+  {
+    "id": "0.1.1.1.1",
+    "topic": "a"
+  },
+  {
+    "id": "0.1.1.1.1.0",
+    "topic": "a"
+  },
+  {
+    "id": "0.1.1.1.1.1",
+    "topic": "a"
+  }
 ]

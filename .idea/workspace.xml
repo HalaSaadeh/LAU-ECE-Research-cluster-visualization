@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8c20a58-5fe5-4fca-a906-4c8320183942" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/circlepackingpage_zoomgroups.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/circlepackingpage_zoomgroups.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster_topic_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/cluster_topic_index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treemappage_zoomgroups.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/treemappage_zoomgroups.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.Md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Survey_results.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visualization_results.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_images/overall_architecture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster_topic_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/cluster_topic_index.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +43,8 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Research\Implementation\undergrad-research-visualization\src" />
-      <recent name="D:\Research\Implementation\undergrad-research-visualization\archive" />
       <recent name="D:\Research\Implementation\undergrad-research-visualization" />
+      <recent name="D:\Research\Implementation\undergrad-research-visualization\archive" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Research\Implementation\undergrad-research-visualization" />
@@ -109,7 +112,7 @@
       <workItem from="1654436082298" duration="2805000" />
       <workItem from="1654452716247" duration="2423000" />
       <workItem from="1654540508921" duration="790000" />
-      <workItem from="1655025784561" duration="365000" />
+      <workItem from="1655025784561" duration="1528000" />
     </task>
     <servers />
   </component>
